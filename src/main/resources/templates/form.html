@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details Form</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-image: url("https://cdn.vectorstock.com/i/preview-1x/18/56/abstract-white-rectangles-geometric-elegant-vector-43791856.jpg");
+            background-repeat:no-repeat;
+            background-size: fill;
+            background-position: top;
+            height:80vh;
+            font-family: "Baskerville Old Face", sans-serif;
+            margin: 5px;
+            position: absolute;
+            top:80px;
+            right:420px;
+        }
+        .icon {
+          padding: 10px;
+          background: dodgerblue;
+          color: white;
+          min-width: 50px;
+          text-align: center;
+        }
+
+        /* Style the input fields */
+        .input-field {
+          width: 100%;
+          padding: 10px;
+          outline: none;
+        }
+        .btn {
+            background-color: dodgerblue;
+            position: absolute;
+            left: 90px;
+            color: white;
+            padding: 15px 20px ;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            opacity: 0.9;
+       }
+       .btn:hover {
+            opacity: 1;
+       }
+      .position-sticky2 {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: black;
+            background-color: #F5FFFA;
+            border: 2px solid black;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .position-sticky2:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+<h2>Fill in the Employee details</h2>
+<form th:action="@{/api/createEmployee}" th:object="${employee}" method="post">
+    <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <label for="employeeId">Employee Id</label>
+        <input type="text" id="employeeId" name="employeeId" th:field="*{employeeId}" required><br>
+    </div>
+    <div class="input-container">
+        <br>
+        <i class="fa fa-user icon"></i>
+    <label for="employeeName">Employee Name</label>
+    <input type="text" id="employeeName" name="employeeName" th:field="*{employeeName}" required><br>
+    </div>
+    <div class="input-container">
+        <br>
+        <i class="fa fa-home icon"></i>
+    <label for="employeeLoc">Employee Location</label>
+    <input type="text" id="employeeLoc" name="employeeLoc" th:field="*{employeeLoc}" required><br>
+    </div>
+    <div class="input-container">
+        <br>
+        <i class="fa fa-envelope icon"></i>
+    <label for="employeeMail">Employee Mail</label>
+    <input type="email" id="employeeMail" name="employeeMail" th:field="*{employeeMail}" required><br>
+    </div>
+    <br>
+    <button type="submit" class="btn">Submit</button>
+    <br>
+    <button class="position-sticky2" onclick="history.back()">Back</button>
+
+</form>
+</div>
+</body>
+</html>

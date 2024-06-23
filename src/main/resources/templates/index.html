@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Library</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Times New Roman", serif;
+            box-sizing: border-box;
+        }
+        .background {
+            background-image: url("https://freedesignfile.com/upload/2020/03/Female-boss-and-employee-cartoon-vector.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.8;
+        }
+
+        .content {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-family: 'Monotype Corsiva', serif;
+            font-weight: 600;
+            font-size: 2.5em;
+            letter-spacing: -1px;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #4682B4;
+            font-size: 1.2em;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        li {
+            border-bottom: 1px solid #ddd;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #F8F8FF;
+        }
+
+        .active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        @media (min-width: 800px) {
+            h1 {
+                font-size: 3em;
+            }
+
+            ul {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            li {
+                border: none;
+            }
+
+            li a {
+                padding: 14px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="background">
+    <div class="content">
+        <h1>Employee Library</h1>
+        <ul>
+            <li><a href="/api/displayAll">Database of all Employees</a></li>
+            <li><a href="/api/newEmployee">Add New Employee</a></li>
+            <li><a href="/api/search">Specific search</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
